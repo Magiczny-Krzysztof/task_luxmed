@@ -1,33 +1,16 @@
-git:
-  static:
-    val1: 6.0
-    val2: 2.0
-  client:
-    api:
-      url: https://api.github.com
-
 server:
   port: 8080
   servlet:
-    context-path: /git-client
+    context-path: /LuxMedTask
 
 
 spring:
-  h2:
-    console:
-      enabled: true
-      settings:
-        web-allow-others: true
   datasource:
-    url: jdbc:h2:mem:testdb;
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-  data:
-    jpa:
-      repositories:
-        bootstrap-mode: default
+    url: jdbc:postgresql://localhost:5433/luxmed
+    username: admin
+    password: 1234
   jpa:
-    hibernate:
-      ddl-auto: update
-
+    properties:
+      hibernate:
+        show-sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
